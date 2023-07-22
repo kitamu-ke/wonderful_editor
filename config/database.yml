@@ -59,6 +59,13 @@ development:
 test:
   <<: *default
   database: wonderful_editor_test
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: wonderful_editor_test
+  username: postgres
+  password: postgres
+  host: localhost
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
