@@ -5,7 +5,7 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
-#  allow_password_change  :boolean          default(FALSE)
+#  allow_password_change  :boolean          default(FALSE), not null
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
@@ -37,4 +37,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
+
+  has_many :articles, dependent: :destroy
+  has_many :articles, dependent: :destroy
+  has_many :articles, dependent: :destroy
 end
