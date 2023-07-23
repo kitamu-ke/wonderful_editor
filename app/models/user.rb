@@ -39,6 +39,4 @@ class User < ApplicationRecord
   include DeviseTokenAuth::Concerns::User
 
   has_many :articles, dependent: :destroy
-  has_many :articles, dependent: :destroy
-  has_many :articles, dependent: :destroy
 end
