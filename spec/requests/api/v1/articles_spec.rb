@@ -5,6 +5,7 @@ RSpec.describe "Api::V1::Articles" do
     subject { get(api_v1_articles_path) }
 
     before { create_list(:article, 3) }
+
     it "記事の一覧が取得できる" do
       subject
       response.parsed_body
