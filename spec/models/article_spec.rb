@@ -1,8 +1,10 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Article, type: :model do
+RSpec.describe Article do
   context "名前があるとき" do
-    it "ユーザーが作られる" do
+    it "記事が作られる" do
+      build(:article)
+      expect(user.valid?).to be true
     end
   end
 end
