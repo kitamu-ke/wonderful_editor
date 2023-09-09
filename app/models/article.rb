@@ -4,10 +4,11 @@
 #
 #  id         :bigint           not null, primary key
 #  body       :text
+#  status     :integer          default("draft"), not null
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  user_id    :bigint           not null
+#  user_id    :bigint
 #
 # Indexes
 #
@@ -19,6 +20,7 @@
 #
 class Article < ApplicationRecord
   belongs_to :user
+  enum status: { draft: 0, published: 1 }
   has_many :comments, dependent: :destroy
   has_many :article_likes, dependent: :destroy
 end
