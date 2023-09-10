@@ -33,9 +33,5 @@ module Api::V1
       def article_params
         params.require(:article).permit(:title, :body, :status)
       end
-
-      def require_login
-        redirect_to login_path unless logged_in?
-      end
   end
 end
