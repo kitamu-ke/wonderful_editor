@@ -10,7 +10,7 @@ RSpec.describe "Api::V1::Articles" do
 
     before { create(:article, :draft) }
 
-    it "公開している記事の一覧が取得できる" do
+    it "公開している記事の一覧取得できる" do
       subject
       response.parsed_body
       expect(response).to have_http_status(:ok)
